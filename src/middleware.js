@@ -4,11 +4,14 @@ import {
 } from './actionTypes'
 
 import {
-  removeItem,
-  setItem,
+  removeItem as DEFAULT_REMOVE_ITEM,
+  setItem as DEFAULT_SET_ITEM,
 } from './utils'
 
-export default function createLocalStorageMiddleware() {
+export default function createLocalStorageMiddleware({
+  removeItem = DEFAULT_REMOVE_ITEM,
+  setItem = DEFAULT_SET_ITEM,
+} = {}) {
   return function localStorageMiddleware() {
     return (next) => (action) => {
       const result = next(action)

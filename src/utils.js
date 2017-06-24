@@ -1,23 +1,23 @@
-export const getItem = (key) => {
-  if (!localStorage) {
+export const getItem = (key, localStorageImplementation = localStorage) => { // eslint-disable-line no-undef, max-len
+  if (!localStorageImplementation) {
     return console.error('localStorage implementation is missing') // eslint-disable-line no-console
   }
 
-  return localStorage.getItem(key)
+  return localStorageImplementation.getItem(key)
 }
 
-export const removeItem = (key) => {
-  if (!localStorage) {
+export const removeItem = (key, localStorageImplementation = localStorage) => { // eslint-disable-line no-undef, max-len
+  if (!localStorageImplementation) {
     return console.error('localStorage implementation is missing') // eslint-disable-line no-console
   }
 
-  localStorage.removeItem(key)
+  return localStorageImplementation.removeItem(key)
 }
 
-export const setItem = (key, value) => {
-  if (!localStorage) {
+export const setItem = (key, value, localStorageImplementation = localStorage) => { // eslint-disable-line no-undef, max-len
+  if (!localStorageImplementation) {
     return console.error('localStorage implementation is missing') // eslint-disable-line no-console
   }
 
-  localStorage.setItem(key, value)
+  return localStorageImplementation.setItem(key, value)
 }
