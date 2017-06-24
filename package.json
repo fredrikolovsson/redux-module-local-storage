@@ -1,0 +1,41 @@
+{
+  "name": "redux-module-local-storage",
+  "version": "0.1.0",
+  "description": "Redux module interfacing with Window.localStorage",
+  "main": "build/index.js",
+  "scripts": {
+    "dev": "watch 'npm run build' src",
+    "build": "babel src -d build",
+    "test": "jest",
+    "test:watch": "npm test -- --watch",
+    "prepublish": "npm run build",
+    "release": "np"
+  },
+  "babel": {
+    "presets": [
+      "latest"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fredrikolovsson/redux-module-local-storage.git"
+  },
+  "keywords": [
+    "redux",
+    "localStorage",
+    "module"
+  ],
+  "author": "Fredrik Olovsson (http://fredrikolovsson.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fredrikolovsson/redux-module-local-storage/issues"
+  },
+  "homepage": "https://github.com/fredrikolovsson/redux-module-local-storage#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-latest": "^6.24.1",
+    "jest": "^20.0.4",
+    "np": "^2.16.0",
+    "watch": "^1.0.2"
+  }
+}
