@@ -8,7 +8,7 @@ export const removeItem = (key) => {
     type: LOCAL_STORAGE_REMOVE_ITEM,
     payload: {
       key,
-    }
+    },
   }
 }
 
@@ -18,6 +18,6 @@ export const setItem = (key, value) => {
     payload: {
       key,
       value,
-    }
+    },
   }
 }
