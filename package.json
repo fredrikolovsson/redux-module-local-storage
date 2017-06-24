@@ -1,6 +1,6 @@
 {
   "name": "redux-module-local-storage",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Redux module interfacing with Window.localStorage",
   "main": "build/index.js",
   "scripts": {
