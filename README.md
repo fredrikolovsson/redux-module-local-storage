@@ -1,0 +1,1 @@
+# Redux module interfacing with Window.localStorage
