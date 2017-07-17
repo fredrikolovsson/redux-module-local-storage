@@ -1,8 +1,4 @@
-import {
-  getItem,
-  removeItem,
-  setItem,
-} from './utils'
+import { getItem, removeItem, setItem } from './utils'
 
 describe('utils', () => {
   let localStorageMock
@@ -35,6 +31,23 @@ describe('utils', () => {
       setItem('key', 'value', localStorageMock)
       expect(localStorageMock.setItem.mock.calls.length).toBe(1)
       expect(localStorageMock.setItem.mock.calls[0]).toEqual(['key', 'value'])
+    })
+
+    it('calls setItem with a stringified object', () => {
+      const key = 'user'
+      const value = {
+        name: {
+          first: 'first',
+          last: 'last',
+        },
+        verified: true,
+      }
+      const stringifiedValue = JSON.stringify(value)
+
+      setItem(key, value, localStorageMock)
+
+      expect(localStorageMock.setItem.mock.calls.length).toBe(1)
+      expect(localStorageMock.setItem.mock.calls[0]).toEqual([key, stringifiedValue])
     })
   })
 })

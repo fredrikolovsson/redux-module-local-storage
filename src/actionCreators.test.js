@@ -1,12 +1,6 @@
-import {
-  removeItem,
-  setItem,
-} from './actionCreators'
+import { removeItem, setItem } from './actionCreators'
 
-import {
-  LOCAL_STORAGE_REMOVE_ITEM,
-  LOCAL_STORAGE_SET_ITEM,
-} from './actionTypes'
+import { LOCAL_STORAGE_REMOVE_ITEM, LOCAL_STORAGE_SET_ITEM } from './actionTypes'
 
 describe('actionCreators', () => {
   describe('removeItem', () => {

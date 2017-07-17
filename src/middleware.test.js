@@ -1,7 +1,4 @@
-import {
-  LOCAL_STORAGE_REMOVE_ITEM,
-  LOCAL_STORAGE_SET_ITEM,
-} from './actionTypes'
+import { LOCAL_STORAGE_REMOVE_ITEM, LOCAL_STORAGE_SET_ITEM } from './actionTypes'
 
 import createMiddleware from './middleware'
 

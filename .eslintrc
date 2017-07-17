@@ -10,7 +10,10 @@
     "jest"
   ],
   "rules": {
-    "semi": [2, "never"],
+    "semi": [
+      2,
+      "never"
+    ],
     "arrow-body-style": "off",
     "arrow-parens": "off"
   }
