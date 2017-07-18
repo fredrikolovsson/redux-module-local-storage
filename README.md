@@ -1,11 +1,51 @@
 Redux module interfacing with Window.localStorage
 
-#### Installation
+## Features
+Supports storing of `string` and `object` values in `Window.localStorage`. Values are stringified on `set` and parsed, if possible, on `get`.
+
+## Installation
 ```
-$ npm i -S redux-module-local-storage
+npm install --save redux-module-local-storage
 ```
 
-#### Example
+Apply middleware in your Redux store configuration:
+``` javascript
+import {
+  middleware as localStorageMiddleware,
+} from 'redux-module-local-storage'
+
+const middleware = [
+  localStorageMiddleware(), // need to invoke it, as it is a factory
+]
+```
+## API
+The following exports are available:
+``` javascript
+import {
+  actionCreators,
+  actionTypes,
+  middleware,
+  utils,
+} from 'redux-module-local-storage'
+
+const {
+  removeItem,
+  setItem,
+} = actionCreators
+
+const {
+  LOCAL_STORAGE_REMOVE_ITEM,
+  LOCAL_STORAGE_SET_ITEM,
+} = actionTypes
+
+const {
+  getItem,
+  removeItem,
+  setItem,
+} = utils
+```
+
+## Example
 ``` javascript
 import {
   actionCreators as localStorageAC,
