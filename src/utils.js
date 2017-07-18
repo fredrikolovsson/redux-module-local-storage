@@ -1,12 +1,20 @@
-export const getItem = (key, localStorageImplementation = localStorage) => { // eslint-disable-line no-undef, max-len
+/* eslint-disable no-undef, max-len */
+export const getItem = (key, localStorageImplementation = localStorage) => {
   if (!localStorageImplementation) {
     return console.error('localStorage implementation is missing') // eslint-disable-line no-console
   }
 
-  return localStorageImplementation.getItem(key)
+  const unparsedValue = localStorageImplementation.getItem(key)
+
+  try {
+    const parsedValue = JSON.parse(unparsedValue)
+    return parsedValue
+  } catch (error) {
+    return unparsedValue
+  }
 }
 
-export const removeItem = (key, localStorageImplementation = localStorage) => { // eslint-disable-line no-undef, max-len
+export const removeItem = (key, localStorageImplementation = localStorage) => {
   if (!localStorageImplementation) {
     return console.error('localStorage implementation is missing') // eslint-disable-line no-console
   }
@@ -14,10 +22,10 @@ export const removeItem = (key, localStorageImplementation = localStorage) => { 
   return localStorageImplementation.removeItem(key)
 }
 
-export const setItem = (key, value, localStorageImplementation = localStorage) => { // eslint-disable-line no-undef, max-len
+export const setItem = (key, value, localStorageImplementation = localStorage) => {
   if (!localStorageImplementation) {
     return console.error('localStorage implementation is missing') // eslint-disable-line no-console
   }
 
-  return localStorageImplementation.setItem(key, value)
+  return localStorageImplementation.setItem(key, JSON.stringify(value))
 }
